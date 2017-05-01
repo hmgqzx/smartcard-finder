@@ -24,6 +24,14 @@ def handle_wechat_request():
         return request.args.get('echostr', '')
 
 
+@app.route("/aboutus", methods=['GET'])
+def about_us():
+    return render_template('aboutus.html')
+
+@app.route("/index.html", methods=['GET'])
+def index():
+    return render_template('index.html')
+
 # @app.route('/auth-score/<openid>', methods=['GET', 'POST'])
 # def auth_score(openid=None):
 #     """教务系统绑定"""

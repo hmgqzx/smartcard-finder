@@ -60,6 +60,7 @@ def text_resp():
     commands = {
         u'取消': cancel_command,
         u'^\?|^？': all_command,
+        u'关于':aboutus_command
         # u'^雷达|^雷達': weather_radar,
         # u'^電話|^电话': phone_number,
         # u'^公交|^公车|^公車': bus_routes,
@@ -153,10 +154,12 @@ def all_command():
     content = app.config['COMMAND_TEXT']
     return wechat.response_text(content)
 
+def aboutus_command():
+    url = app.config['HOST_URL'] + '/aboutus'
+    content = app.config['ABOUT_US_TEXT'] % url
+    return wechat.response_text(content)
 
 def subscribe():
     """回复订阅事件"""
     content = app.config['WELCOME_TEXT'] + app.config['COMMAND_TEXT']
-    return wechat.response_text(content)
-
     return wechat.response_text(content)

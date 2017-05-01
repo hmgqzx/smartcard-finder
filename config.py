@@ -19,3 +19,6 @@ COMMAND_TEXT = u"请回复以下关键词开始：\n—————————�
 WELCOME_TEXT = u"感谢关注莞香广科[愉快]\n我是广科助手小喵[调皮]\n\n"
 
 CANCEL_COMMAND_TEXT = u"已回到正常模式啦啦啦~\n\n"
+
+ABOUT_US_TEXT = u'<a href=\"%s\">【点击这里绑定借书卡】</a>\n\n绑定后即可查询'
+
