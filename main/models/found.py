@@ -1,6 +1,6 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
-
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://test:123456@127.0.0.1/SmartCard'
@@ -14,9 +14,10 @@ class Found(db.Model):
 		'mysql_charset': 'utf8mb4'
 	}
 	
-	fid = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	pub_date = db.Column(db.DateTime)
+	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	
-	card_owner = db.Column(db.String(50),nullable=False)
+	card_owner = db.Column(db.String(50), nullable=False)
 	card_number = db.Column(db.String(6), nullable=False, primary_key=True,)
 	roll_number = db.Column(db.String(10), nullable=False)
 	acamedy = db.Column(db.String(50), nullable=False)
@@ -28,13 +29,16 @@ class Found(db.Model):
 	#二选一：暂存地点
 	deposit_location = db.Column(db.String(50), nullable=True)
 		
-	def __init__(self, fid, card_owner, card_number, roll_number, picker_name, picker_long, picker_short, deposit_location):
-		self.fid = fid
+	def __init__(self, id, card_owner, card_number, roll_number, picker_name, picker_long, picker_short, deposit_location, pub_date):
+		self.id = id
 		self.card_owner = picked_card_number
 		self.picker_name = picker_name
 		self.picker_phone = picker_phone
 		self.picker_email = picker_email
 		self.deposit_location = deposit_location
+		if pub_date is None:
+			self.pub_date = datetime.utcnow()
+		self.pub_date = pub_date
 		
 		
 	def __repr__(self):
@@ -48,3 +52,4 @@ class Found(db.Model):
 	def updata(self):
 		db.session.commit()
 		return self
+		
