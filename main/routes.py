@@ -37,9 +37,43 @@ def index():
 def personal():
     return render_template('personal.html')
 
-@app.route("/feedback", methods=['GET'])
-def feedback():
+@app.route("/feedback/<openid>", methods=['GET','POST'])
+def feedback(openid=None):
     return render_template('feedback.html')
+
+@app.route("/feedbacksussess", methods=['GET'])
+def feedbacksussess():
+    return render_template('feedBackSuccess.html')
+
+@app.route("/findSuccess/<openid>", methods=['GET'])
+def findSuccess():
+    return render_template('findSuccess.html')
+
+
+@app.route("/lostLog", methods=['GET'])
+def lostLog():
+    return render_template('lostLog.html')
+
+@app.route("/paymentRecord", methods=['GET'])
+def paymentRecord():
+    return render_template('paymentRecord.html')
+
+@app.route("/paymentResult", methods=['GET'])
+def paymentResult():
+    return render_template('paymentResult.html')
+
+
+@app.route("/pickCard", methods=['GET'])
+def pickCard():
+    return render_template('pickCard.html')
+
+@app.route("/register", methods=['GET'])
+def register():
+    return render_template('register.html')
+
+@app.route("/success", methods=['GET'])
+def success():
+    return render_template('success.html')
 
 # @app.route('/auth-score/<openid>', methods=['GET', 'POST'])
 # def auth_score(openid=None):
