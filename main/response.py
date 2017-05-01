@@ -9,7 +9,7 @@ from .plugins.state import set_user_state, get_user_state, \
     set_user_last_interact_time, get_user_last_interact_time
 # from .plugins import simsimi, sign, express, music, score, library, \
 #     school_news, weather, wechat_custom
-from .plugins.state import wechat_custom
+from .plugins import wechat_custom
 
 def wechat_response(data):
     """微信消息处理回复"""
@@ -18,7 +18,7 @@ def wechat_response(data):
     wechat = init_wechat_sdk()
     wechat.parse_data(data)
     message = wechat.get_message()
-    # openid = message.source
+    openid = message.source
     # # 用户信息写入数据库
     # set_user_info(openid)
 
@@ -134,7 +134,11 @@ def subscribe_resp():
     response = subscribe()
     return response
 
-
+def cancel_command():
+    """取消状态"""
+    content = app.config['CANCEL_COMMAND_TEXT'] + app.config['COMMAND_TEXT']
+    return wechat.response_text(content)
+    
 def command_not_found():
     """非关键词回复"""
     # 客服接口回复信息
