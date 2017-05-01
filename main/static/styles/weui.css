@@ -1548,6 +1548,8 @@ a.weui-media-box:active {
   color: #999999;
   font-size: 14px;
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
 .weui-footer a {
   color: #586C94;

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="zh_CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>寻卡成功</title>
+        <!-- 引入 WeUI -->
+        <link rel="stylesheet" href="../static/styles/weui.min.css"/>
+        <link rel="stylesheet" href="../static/styles/auth.min.css">
+       <link rel="stylesheet" href="../static/styles/jquery-weui/dist/lib/weui.min.css">        
+        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/css/jquery-weui.css">
+    </head>
+    <body>
+      <div class="hd">
+        <h1 class="page_title">失卡信息</h1>
+      </div>
+      <div class="weui-form-preview">
+      <div class="weui-form-preview__hd">
+        <label class="weui-form-preview__label">姓名</label>
+        <em class="weui-form-preview__value">{{姓名}}</em>
+      </div>
+      <div class="weui-form-preview__bd" id="non_diy" >
+        <div class="weui-form-preview__item">
+          <label class="weui-form-preview__label">一卡通卡号</label>
+          <span class="weui-form-preview__value">{{一卡通卡号}}</span>
+        </div>
+        <div class="weui-form-preview__item">
+          <label class="weui-form-preview__label">学号</label>
+          <span class="weui-form-preview__value">{{学号}}</span>
+        </div>
+        <div class="weui-form-preview__item">
+          <label class="weui-form-preview__label">{{卡所在地点}}</label>
+          <span class="weui-form-preview__value">{{指定位置}}</span>
+        </div>        
+      </div>
+      <div class="weui-form-preview__bd" id="diy" >
+        <div class="weui-form-preview__item">
+          <label class="weui-form-preview__label">一卡通卡号</label>
+          <span class="weui-form-preview__value">{{一卡通卡号}}</span>
+        </div>
+        <div class="weui-form-preview__item">
+          <label class="weui-form-preview__label">学号</label>
+          <span class="weui-form-preview__value">{{学号}}</span>
+        </div>
+        <div class="weui-form-preview__item">
+          <label class="weui-form-preview__label">拾获人称呼</label>
+          <span class="weui-form-preview__value">{{拾获人称呼}}</span>
+        </div>    
+           <div class="weui-form-preview__item" id="longPhone">
+          <label class="weui-form-preview__label">拾获人手机长号</label>
+          <span class="weui-form-preview__value">{{手机长号}}</span>
+        </div>         
+           <div class="weui-form-preview__item" id="shortPhone">
+          <label class="weui-form-preview__label">拾获人手机短号</label>
+          <span class="weui-form-preview__value">{{手机短号}}</span>
+        </div>     
+      </div>
+
+      <div class="weui-form-preview__ft">
+        <a class="weui-btn weui-btn_primary2" href="index.html">确定</a>
+    </div>
+      <i class="weui-icon-info-circle" style="display: inline;"></i><p class="weui-msg__desc" style="display: inline;">恭喜您寻卡成功，可以截图分享至朋友圈来庆祝一下喔</p>
+      <script text="text/javascript" src="../static/styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
+    <script text="text/javascript" src="../static/styles/jquery-weui/dist/js/jquery-weui.js"></script>          
+            <div class="weui-footer ">
+              <p class="weui-footer__links">
+                <a href="javascript:void(0);" class="weui-footer__link">共青团汕头大学委员会</a>
+                <a href="javascript:void(0);" class="weui-footer__link">汕头大学青年志愿者协会</a>
+                 </p>
+              <p class="weui-footer__text">Copyright © 2016-2017 JMP团队</p>
+            </div>         
+    </body>
+</html>

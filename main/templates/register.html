@@ -5,9 +5,11 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
         <title>注册</title>
         <!-- 引入 WeUI -->
-        <link rel="stylesheet" href="../styles/weui.min.css"/>
-        <link rel="stylesheet" href="../styles/auth.min.css">
-        <link rel="stylesheet" href="../styles/jquery/">
+        <link rel="stylesheet" href="../static/styles/weui.min.css"/>
+        <link rel="stylesheet" href="../static/styles/auth.min.css">
+        <link rel="stylesheet" href="../static/styles/jquery/">
+        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/lib/weui.min.css">        
+        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/css/jquery-weui.css">
     </head>
     <body>
     <div class="weui-cell__hd" style="margin: 10%">
@@ -15,17 +17,28 @@
     </div>
         <div class="weui-cells weui-cells_form" id="form">
             
-             <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" required="required"  type="number" pattern="[0-9]*" placeholder="请输入学号" id="studentNum">
                 </div>
-            </div>            
-
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">一卡通号</label></div>
+            </div>      
+             <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" required="required"  type="number" pattern="0[0-9]{5}" placeholder="请输入一卡通号" id="cardNum" >
+                    <input class="weui-input" required="required"  placeholder="请输入姓名" id="name">
+                </div>
+            </div>            
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">邮箱</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" required="required"  placeholder="请输入邮箱" id="email">
+                </div>
+            </div>  
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">一卡通卡号</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" required="required"  type="number" pattern="0[0-9]{5}" placeholder="请输入一卡通卡号" id="cardNum" >
                 </div>              
             </div>              
 
@@ -35,9 +48,9 @@
                     <input class="weui-input" required="required" type="password"  placeholder="请输入一卡通密码" id="password">
                 </div>                
             </div>      
-
+    
         </div>
-          <div class="weui-cells__tips" id="help" style="display: none;">一卡通示例：069xxx <br>一卡通密码：默认为身份证后6位,最后一位为x则前移一位
+          <div class="weui-cells__tips" id="help">1. 一卡通卡号示例：069xxx <br>2. 一卡通密码：默认为身份证后6位,最后一位为x则前移一位<br>3. 邮箱建议填写校内邮箱，即xxxx@stu.edu.cn
           </div>
         <button type="submit" class="weui-btn weui-btn_primary" style="margin-top: 10%;width: 50%; " onclick="basicCheck()" id="showToast">注册 </button>   
         <div id="toast" style="opacity: 0; display: none;">
@@ -46,16 +59,18 @@
             <i class="weui-icon-success-no-circle weui-icon_toast"></i>
             <p class="weui-toast__content">已完成</p>
         </div>
-    </div> 
-     <div class="weui-msg__extra-area">
-            <div class="weui-footer ">
+    </div>      
+            <div class="weui-footer " style="margin-top:20px; ">
               <p class="weui-footer__links">
                 <a href="javascript:void(0);" class="weui-footer__link">共青团汕头大学委员会</a>
                 <a href="javascript:void(0);" class="weui-footer__link">汕头大学青年志愿者协会</a>
                  </p>
               <p class="weui-footer__text">Copyright © 2016-2017 JMP团队</p>
          </div>
-        </div>
-    </body>
-    <script type="text/javascript" src="../scripts/basicCheck.js"></script>
+            
+         <script text="text/javascript" src="../static/styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
+    <script text="text/javascript" src="../static/styles/jquery-weui/dist/js/jquery-weui.js">
+            <script type="text/javascript" src="../static/scripts/basicCheck.js"></script>
+    </script> 
+    </body> 
 </html>

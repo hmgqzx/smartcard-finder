@@ -1,7 +1,7 @@
 $(document).on("click", "#changePassword", function() {
         $.prompt({
           text: "请输入旧密码",
-          title: "输入姓名",
+          title: "输入密码",
           onOK: function(text) {
            //测试是否输入正确密码，正确则返回这个
                 $.prompt({

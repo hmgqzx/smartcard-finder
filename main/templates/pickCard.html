@@ -6,30 +6,38 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
         <title>拾卡登记</title>
         <!-- 引入 WeUI -->
-        <link rel="stylesheet" href="../styles/weui.min.css"/>
-        <link rel="stylesheet" href="../styles/auth.min.css">
-       <link rel="stylesheet" href="../styles/jquery-weui/dist/lib/weui.min.css">
+        <link rel="stylesheet" href="../static/styles/weui.min.css"/>
+        <link rel="stylesheet" href="../static/styles/auth.min.css">
+       <link rel="stylesheet" href="../static/styles/jquery-weui/dist/lib/weui.min.css">
         
-        <link rel="stylesheet" href="../styles/jquery-weui/dist/css/jquery-weui.css">
+        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/css/jquery-weui.css">
     </head>
     <body>
-    <script text="text/javascript" src="../styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
-<script text="text/javascript" src="../styles/jquery-weui/dist/js/jquery-weui.js"></script>
+    <script text="text/javascript" src="../static/styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
+<script text="text/javascript" src="../static/styles/jquery-weui/dist/js/jquery-weui.js"></script>
         <div class="weui-cell__hd" style="margin: 10%">
             <h1 class="page_title">拾卡登记</h1>
         </div>
+        <div class="weui-cells__title">请填写所拾卡的信息</div> 
         <div class="weui-cells weui-cells_form" id="pickform">
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">一卡通号</label></div>
+
+              <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" required="required"  type="number" pattern="[0-9]*" placeholder="请输入所拾卡的一卡通号" id="pickCardNum">                    
+                    <input class="weui-input" required="required"  placeholder="请输入所拾卡主姓名" id="name">                    
+                </div>                
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">卡号</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" required="required"  type="number" pattern="[0-9]*" placeholder="请输入所拾卡卡号" id="pickCardNum">                    
                 </div>                
             </div>
 
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" required="required"  type="number" pattern="[0-9]*" placeholder="请输入所拾卡的学号" id="pickStudentNum">
+                    <input class="weui-input" required="required"  type="number" pattern="[0-9]*" placeholder="请输入所拾卡学号" id="pickStudentNum">
                 </div>                
             </div>
 
@@ -49,19 +57,78 @@
                 </script>   
             </div>                    
         </div>    
-        <div class="weui-cells__tips">*请填写所拾卡的信息</div>   
-        <input type="button" class="weui-btn weui-btn_primary" style="width: 50%" value="提交" onclick="basicCheck()">
+        
+        <div class="weui-cells__title">请选择失主寻卡方式</div>
+        <div class="weui-cells weui-cells_radio">
+            <label class="weui-cell weui-check__label" for="x11" onclick="showPlacePicker()" ">
+                <div class="weui-cell__bd">
+                    <p>指定位置</p>
+                </div>                
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="radio1" id="x11" checked="checked">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>           
+            <label class="weui-cell weui-check__label" for="x12" onclick="showDiy()">
+            
+                <div class="weui-cell__bd">
+                    <p>联系我</p>
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" name="radio1" class="weui-check" id="x12" >
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>  
+            </a>
+        </div>         
+         <div class="weui-cells" id="choosePlace" >
+                    <div class="weui-cell" >
+                        <div class="weui-cell__hd"><label class="weui-label">指定位置</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" id="placePicker" placeholder="请选择指定位置">
+                         </div>
+                  </div>          
+            </div>
+          <div id="diy" style="display: none;">
+               <div class="weui-cells" >
+               <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">昵称</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input type="" name="" class="weui-input" placeholder="以便失卡主人联系您">                    
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">手机长号</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input type="numbers" class="weui-input">                    
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">手机短号</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input type="numbers" class="weui-input">                    
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__tips">*您的昵称信息将会通知失主</div>        
+       </div>        
+        <input type="button" class="weui-btn weui-btn_primary" style="width: 50%;margin-top: 20px;" value="提交" onclick="basicCheck()">
 
-        <script type="text/javascript" src="../scripts/basicCheck.js"></script>
-         <div class="weui-msg__extra-area">
-            <div class="weui-footer ">
+        <script type="text/javascript" src="../static/scripts/basicCheck.js"></script>
+        <script text="text/javascript" src="../static/scripts/placePicker.js"></script>
+          <div class="weui-footer ">
               <p class="weui-footer__links">
                 <a href="javascript:void(0);" class="weui-footer__link">共青团汕头大学委员会</a>
                 <a href="javascript:void(0);" class="weui-footer__link">汕头大学青年志愿者协会</a>
                  </p>
               <p class="weui-footer__text">Copyright © 2016-2017 JMP团队</p>
-            </div>
-         </div>        
+            </div>             
     </body>
    
 </html>

@@ -3,7 +3,7 @@ function showPlacePicker() {
     $("#diy")[0].style.display = 'none'; 
         }
 $("#placePicker").select({
-  title: "选择手机",
+  title: "选择地点",
   items: [
     {
         title:"",

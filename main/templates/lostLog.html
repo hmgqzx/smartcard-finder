@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
         <title>失卡挂失</title>
         <!-- 引入 WeUI -->
-        <link rel="stylesheet" href="../styles/weui.min.css"/>
-        <link rel="stylesheet" href="../styles/auth.min.css">
-        <link rel="stylesheet" href="../styles/jquery-weui/dist/lib/weui.min.css">        
-        <link rel="stylesheet" href="../styles/jquery-weui/dist/css/jquery-weui.css">
+        <link rel="stylesheet" href="../static/styles/weui.min.css"/>
+        <link rel="stylesheet" href="../static/styles/auth.min.css">
+        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/lib/weui.min.css">        
+        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/css/jquery-weui.css">
     </head>
     <body>
-        <script text="text/javascript" src="../styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
-    <script text="text/javascript" src="../styles/jquery-weui/dist/js/jquery-weui.js"></script> 
+        <script text="text/javascript" src="../static/styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
+    <script text="text/javascript" src="../static/styles/jquery-weui/dist/js/jquery-weui.js"></script> 
        
         <div class="weui-msg">
           <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
@@ -26,11 +26,11 @@
              <a href="javascript:;" id='show-confirm' class="weui-btn weui-btn_warn">挂失</a>       
              <script type="text/javascript">
                  $(document).on("click", "#show-confirm", function() {
-                    $.confirm("您确定挂失吗?<br>挂失后如需取消挂失则需要本人携学生证或身份证至一卡通中心办理！", "确认删除?", function() {
+                    $.confirm("您确定挂失吗?<br>挂失后如需取消挂失则需要本人携学生证或身份证至一卡通中心办理！", "确定挂失?", function() {
                         //添加进行挂失的页面
                       $.alert("您已成功挂失!");
                     }, function() {
-                      $.toast('取消挂失',"cancel");
+                      $.toast('操作取消',"cancel");
                     });
               });
              </script>       

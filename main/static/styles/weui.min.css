@@ -274,7 +274,7 @@ a.weui-media-box:active{background-color:#ececec}
 .weui-grid__icon+.weui-grid__label{margin-top:5px}
 .weui-grid__label{display:block;color:#000}
 .weui-footer,.weui-grid__label{text-align:center;font-size:14px}
-.weui-footer{color:#999}
+.weui-footer{color:#999;margin-top: 30px;margin-bottom: 0px;}
 .weui-footer a{color:#586c94}
 .weui-footer_fixed-bottom{position:fixed;bottom:.52em;left:0;right:0}
 .weui-footer__links{font-size:0}
