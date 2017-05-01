@@ -32,6 +32,11 @@ def about_us():
 def index():
     return render_template('index.html')
 
+#todo: add <openid> to link
+@app.route("/personal.html", methods=['GET'])
+def personal():
+    return render_template('personal.html')
+
 # @app.route('/auth-score/<openid>', methods=['GET', 'POST'])
 # def auth_score(openid=None):
 #     """教务系统绑定"""
