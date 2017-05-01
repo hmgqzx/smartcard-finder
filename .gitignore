@@ -136,3 +136,4 @@ celerybeat-schedule
 dump.rdb
 node_modules
 .python-version
+README的副本.md
