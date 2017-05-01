@@ -15,14 +15,13 @@ class Lost(db.Model):
 	}
 	
 	lostid = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	owner_name = db.Column(db.String(50), nullable=False)
-	lost_card_number = db.Column(db.String(11), nullable=False)
+	card_owner = db.Column(db.String(50), nullable=False)
+	card_number = db.Column(db.String(11), nullable=False)
 	
-	
-	def __init__(self, lostid, owner_name, lost_card_number):
+	def __init__(self, lostid, card_owner, card_number):
 		self.lostid = lostid
-		self.owner_name = owner_name
-		self.lost_card_number = lost_card_number	
+		self.card_owner = card_owner
+		self.card_number = card_number	
 	
 	def __repr__(self):
 		return '<LOST %r' % self.lostid

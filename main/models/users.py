@@ -17,20 +17,32 @@ class Users(db.Model):
 	userid = db.Column(db.Integer, primary_key=True, nullable=False, autoincrement=True)
 	wc_openid = db.Column(db.String(50), primary_key=True, nullable=False)
 	wc_username = db.Column(db.String(50), nullable=False)
-	phone = db.Column(db.String(11), nullable=False)
-	email = db.Column(db.String(50), nullable=False)
+	
+	name = db.Column(db.String(50),nullable=False)
 	roll_number = db.Column(db.String(10), nullable=False)
 	card_number = db.Column(db.String(6), nullable=False)
 	
+	phone = db.Column(db.String(11), nullable=False)
+	email = db.Column(db.String(50), nullable=False)
+
+	card_status = db.Column(db.Integer(1), nullable=False, default=0)
 	
-	def __init__(self, userid, wc_openid, wc_username, phone, email, roll_number, card_number):
+	def __init__(self, userid, wc_openid, wc_username, name, roll_number, card_number, phone, email, card_status):
 		self.userid = userid
 		self.wc_openid = wc_openid
 		self.wc_username = wc_username
-		self.phone = phone
-		self.email = email
+		
+		self.name = name
 		self.roll_number = roll_number
 		self.card_number = card_number
+		
+		self.phone = phone
+		self.email = email
+		
+		self.card_status = card_status
+		
+		
+
 		
 	def __repr__(self):
 		return '<USERS userid %r>' % self.userid
@@ -43,3 +55,5 @@ class Users(db.Model):
 	def updata(self):
 		db.session.commit()
 		return self
+		
+		

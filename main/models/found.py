@@ -15,15 +15,22 @@ class Found(db.Model):
 	}
 	
 	fid = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	picked_card_number = db.Column(db.String(6), primary_key=True,nullable=False)
+	
+	card_owner = db.Column(db.String(50),nullable=False)
+	card_number = db.Column(db.String(6), nullable=False, primary_key=True,)
+	roll_number = db.Column(db.String(10), nullable=False)
+	acamedy = db.Column(db.String(50), nullable=False)
+	
+	#二选一：联系我
 	picker_name = db.Column(db.String(50), nullable=True)
-	picker_phone = db.Column(db.String(11), nullable=True)
-	picker_email = db.Column(db.String(50), nullable=True)
+	picker_long = db.Column(db.String(11), nullable=True)
+	picker_short = db.Column(db.String(6), nullable=True)
+	#二选一：暂存地点
 	deposit_location = db.Column(db.String(50), nullable=True)
 		
-	def __init__(self, fid, picked_card_number, picker_name, picker_phone, picker_email, deposit_location):
+	def __init__(self, fid, card_owner, card_number, roll_number, picker_name, picker_long, picker_short, deposit_location):
 		self.fid = fid
-		self.picked_card_number = picked_card_number
+		self.card_owner = picked_card_number
 		self.picker_name = picker_name
 		self.picker_phone = picker_phone
 		self.picker_email = picker_email
