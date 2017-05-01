@@ -28,14 +28,18 @@ def handle_wechat_request():
 def about_us():
     return render_template('aboutus.html')
 
-@app.route("/index.html", methods=['GET'])
+@app.route("/index", methods=['GET'])
 def index():
     return render_template('index.html')
 
 #todo: add <openid> to link
-@app.route("/personal.html", methods=['GET'])
+@app.route("/personal", methods=['GET'])
 def personal():
     return render_template('personal.html')
+
+@app.route("/feedback", methods=['GET'])
+def feedback():
+    return render_template('feedback.html')
 
 # @app.route('/auth-score/<openid>', methods=['GET', 'POST'])
 # def auth_score(openid=None):
