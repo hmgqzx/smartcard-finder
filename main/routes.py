@@ -71,6 +71,13 @@ def pickCard():
 def register():
     return render_template('register.html')
 
+@app.route("/testreg", methods=['POST'])
+def test_reg():
+    # username = request.form.get('studentNum','')
+    # if username:
+    return render_template('success.html')
+    # return render_template('success.html')
+
 @app.route("/success", methods=['GET'])
 def success():
     return render_template('success.html')
