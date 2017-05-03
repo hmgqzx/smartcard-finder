@@ -5,28 +5,28 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
         <title>注册</title>
         <!-- 引入 WeUI -->
-        <link rel="stylesheet" href="../static/styles/weui.min.css"/>
-        <link rel="stylesheet" href="../static/styles/auth.min.css">
-        <link rel="stylesheet" href="../static/styles/jquery/">
-        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/lib/weui.min.css">        
-        <link rel="stylesheet" href="../static/styles/jquery-weui/dist/css/jquery-weui.css">
+        <link rel="stylesheet" href="../styles/weui.min.css"/>
+        <link rel="stylesheet" href="../styles/auth.min.css">
+        <link rel="stylesheet" href="../styles/jquery/">
+        <link rel="stylesheet" href="../styles/jquery-weui/dist/lib/weui.min.css">        
+        <link rel="stylesheet" href="../styles/jquery-weui/dist/css/jquery-weui.css">
     </head>
     <body>
     <div class="weui-cell__hd" style="margin: 10%">
         <h1 class="page_title">注册</h1>
     </div>
-        <div class="weui-cells weui-cells_form" id="form">
+        <form class="weui-cells weui-cells_form" id="form" action="/test_reg" method ="post">
             
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" required="required"  type="number" pattern="[0-9]*" placeholder="请输入学号" id="studentNum">
+                    <input class="weui-input" required="required" placeholder="请输入姓名" id="studentNum">
                 </div>
             </div>      
              <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
                 <div class="weui-cell__bd">
-                    <input class="weui-input" required="required"  placeholder="请输入姓名" id="name">
+                    <input class="weui-input" required="required"   type="number"  placeholder="请输入学号" id="name">
                 </div>
             </div>            
             <div class="weui-cell">
@@ -48,7 +48,7 @@
                     <input class="weui-input" required="required" type="password"  placeholder="请输入一卡通密码" id="password">
                 </div>                
             </div>      
-           <div class="weui-cell weui-cell_vcode">
+            <div class="weui-cell weui-cell_vcode">
                 <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
                 <div class="weui-cell__bd">
                     <input class="weui-input" type="number" placeholder="请输入验证码">
@@ -57,10 +57,10 @@
                     <img class="weui-vcode-img" src="http://smartcard.stu.edu.cn/getCheckpic.action?rand=1111.23">
                 </div>
             </div>
-        </div>
+        </form>
           <div class="weui-cells__tips" id="help">1. 一卡通卡号示例：069xxx <br>2. 一卡通密码：默认为身份证后6位,最后一位为x则前移一位<br>3. 邮箱建议填写校内邮箱，即xxxx@stu.edu.cn
           </div>
-        <button type="submit" class="weui-btn weui-btn_primary" style="margin-top: 10%;width: 50%; " onclick="basicCheck()" id="showToast">注册 </button>   
+        <input type="submit" class="weui-btn weui-btn_primary2" value="注册">
         <div id="toast" style="opacity: 0; display: none;">
         <div class="weui-mask_transparent"></div>
         <div class="weui-toast">
@@ -76,9 +76,9 @@
               <p class="weui-footer__text">Copyright © 2016-2017 JMP团队</p>
          </div>
             
-         <script text="text/javascript" src="../static/styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
-    <script text="text/javascript" src="../static/styles/jquery-weui/dist/js/jquery-weui.js">
-            <script type="text/javascript" src="../static/scripts/basicCheck.js"></script>
+         <script text="text/javascript" src="../styles/jquery-weui/dist/lib/jquery-2.1.4.js"></script>
+    <script text="text/javascript" src="../styles/jquery-weui/dist/js/jquery-weui.js">
+            <script type="text/javascript" src="../scripts/basicCheck.js"></script>
     </script> 
     </body> 
 </html>
