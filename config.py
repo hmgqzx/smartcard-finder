@@ -6,7 +6,7 @@
 COMMAND_NOT_FOUND_TEXT = u"收到你的留言啦！"
 '''
 
-DEBUG = False
+DEBUG = True
 
 MAIN_URL = "https://www.baidu.com/"
 
