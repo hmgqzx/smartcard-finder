@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import request, render_template, jsonify, Markup, abort, \
-    send_from_directory
+    send_from_directory, redirect, url_for
 from . import app, redis
 from .utils import check_signature, get_jsapi_signature_data
 from .response import wechat_response
@@ -28,57 +28,54 @@ def handle_wechat_request():
 def about_us():
     return render_template('aboutus.html')
 
-@app.route("/index", methods=['GET'])
-def index():
+@app.route("/<openid>/index", methods=['GET'])
+def index(openid=None):
     return render_template('index.html')
 
 #todo: add <openid> to link
-@app.route("/personal", methods=['GET'])
-def personal():
+@app.route("/<openid>/personal", methods=['GET'])
+def personal(openid=None):
     return render_template('personal.html')
 
-@app.route("/feedback/<openid>", methods=['GET','POST'])
+@app.route("/<openid>/feedback", methods=['GET','POST'])
 def feedback(openid=None):
     return render_template('feedback.html')
 
-@app.route("/feedbacksussess", methods=['GET'])
+@app.route("/<openid>/feedbacksussess", methods=['GET'])
 def feedbacksussess():
     return render_template('feedBackSuccess.html')
 
-@app.route("/findSuccess/<openid>", methods=['GET'])
+@app.route("/<openid>/findSuccess", methods=['GET'])
 def findSuccess():
     return render_template('findSuccess.html')
 
 
-@app.route("/lostLog", methods=['GET'])
+@app.route("/<openid>/lostLog", methods=['GET'])
 def lostLog():
     return render_template('lostLog.html')
 
-@app.route("/paymentRecord", methods=['GET'])
+@app.route("/<openid>/paymentRecord", methods=['GET'])
 def paymentRecord():
     return render_template('paymentRecord.html')
 
-@app.route("/paymentResult", methods=['GET'])
+@app.route("/<openid>/paymentResult", methods=['GET'])
 def paymentResult():
     return render_template('paymentResult.html')
 
-
-@app.route("/pickCard", methods=['GET'])
+@app.route("/<openid>/pickCard", methods=['GET'])
 def pickCard():
     return render_template('pickCard.html')
 
-@app.route("/register", methods=['GET'])
+@app.route("/<openid>/register", methods=['GET'])
 def register():
     return render_template('register.html')
 
-@app.route("/testreg", methods=['POST'])
+@app.route("/<openid>/testreg", methods=['POST'])
 def test_reg():
-    # username = request.form.get('studentNum','')
-    # if username:
-    return render_template('success.html')
-    # return render_template('success.html')
+    studentNum = request.form.get('studentNum','1')
+    return redirect(studentNum)
 
-@app.route("/success", methods=['GET'])
+@app.route("/<openid>/success", methods=['GET'])
 def success():
     return render_template('success.html')
 
