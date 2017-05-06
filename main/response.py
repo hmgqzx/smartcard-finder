@@ -60,7 +60,8 @@ def text_resp():
     commands = {
         u'取消': cancel_command,
         u'^\?|^？': all_command,
-        u'关于':aboutus_command
+        u'关于':aboutus_command,
+        u'主页':index_command
         # u'^雷达|^雷達': weather_radar,
         # u'^電話|^电话': phone_number,
         # u'^公交|^公车|^公車': bus_routes,
@@ -157,6 +158,11 @@ def all_command():
 def aboutus_command():
     url = app.config['HOST_URL'] + '/aboutus'
     content = app.config['ABOUT_US_TEXT'] % url
+    return wechat.response_text(content)
+
+def index_command():
+    url = app.config['HOST_URL'] + '/' + openid + '/index'
+    content = app.config['INDEX_TEXT'] % url
     return wechat.response_text(content)
 
 def subscribe():

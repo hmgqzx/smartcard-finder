@@ -22,3 +22,5 @@ CANCEL_COMMAND_TEXT = u"已回到正常模式啦啦啦~\n\n"
 
 ABOUT_US_TEXT = u'<a href=\"%s\">【点击这里绑定借书卡】</a>\n\n绑定后即可查询'
 
+INDEX_TEXT = u'<a href=\"%s\">【点击这里进入主页】</a>\n\n'
+
